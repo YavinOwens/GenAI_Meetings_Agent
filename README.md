@@ -62,11 +62,29 @@ Download `ffmpeg` from [ffmpeg.org](https://ffmpeg.org/download.html) and add it
 
 ### Python Package Installation
 
+#### Option 1: Install directly from GitHub (Recommended)
+
+You can install the package directly from GitHub using pip:
+
+```bash
+pip install git+https://github.com/YavinOwens/GenAI_Meetings_Agent.git
+```
+
+Or install from a specific branch:
+
+```bash
+pip install git+https://github.com/YavinOwens/GenAI_Meetings_Agent.git@main
+```
+
+This will automatically install all required dependencies and make the `meeting-agent` and `meeting-cli` commands available.
+
+#### Option 2: Clone and install in editable mode
+
 1. Clone the repository:
 
 ```bash
 git clone https://github.com/YavinOwens/GenAI_Meetings_Agent.git
-cd meeting_agent
+cd GenAI_Meetings_Agent
 ```
 
 2. Create a virtual environment (recommended):
@@ -88,16 +106,22 @@ This will install all required dependencies and make the package available as `m
 
 ```mermaid
 flowchart TD
-    A[Clone Repository] --> B[Create Virtual Environment]
-    B --> C[Activate Virtual Environment]
-    C --> D[Install System Dependencies]
-    D --> E{Platform?}
-    E -->|macOS| F[brew install ffmpeg]
-    E -->|Linux| G[apt/dnf install ffmpeg]
-    E -->|Windows| H[Download ffmpeg]
-    F --> I[pip install -e .]
-    G --> I
-    H --> I
+    A{Installation Method?} -->|Direct| B[pip install git+https://...]
+    A -->|Development| C[Clone Repository]
+    B --> D[Install System Dependencies]
+    C --> E[Create Virtual Environment]
+    E --> F[Activate Virtual Environment]
+    F --> D
+    D --> G{Platform?}
+    G -->|macOS| H[brew install ffmpeg]
+    G -->|Linux| I[apt/dnf install ffmpeg]
+    G -->|Windows| J[Download ffmpeg]
+    H --> K{Method?}
+    I --> K
+    J --> K
+    K -->|Direct| L[Ready to Use]
+    K -->|Development| M[pip install -e .]
+    M --> L
     I --> J[Configure API Key]
     J --> K[Ready to Use]
 ```
