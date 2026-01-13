@@ -54,9 +54,14 @@ Thumbs.db
 
 # Project specific
 # Audio files and transcripts
+# Ignore all files in Soundrecording_raw subdirectories
 Soundrecording_raw/**/*
+# But allow .gitkeep files to preserve directory structure
 !Soundrecording_raw/**/.gitkeep
 !Soundrecording_raw/.gitkeep
+# Allow directories themselves
+!Soundrecording_raw/**/
+# Ignore specific audio file types anywhere
 *.mp3
 *.wav
 *.m4a
