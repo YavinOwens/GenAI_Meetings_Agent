@@ -1,0 +1,108 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["meeting_agent", "meeting_agent.scripts"]
+
+[tool.setuptools.package-data]
+meeting_agent = ["prompt_gallery/*.txt"]
+
+[project]
+name = "meeting-agent"
+version = "1.0.0"
+description = "A tool for transcribing audio, processing meeting transcripts, and generating structured meeting notes using LLM technology"
+readme = "README.md"
+requires-python = ">=3.12"
+authors = [
+    {name = "Meeting Agent Team"}
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: End Users/Desktop",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.12",
+]
+
+dependencies = [
+    "ollama>=0.6.1",
+    "tiktoken>=0.12.0",
+    "python-docx>=1.1.0",
+    "pyrtf3>=0.47.5",
+    "openai-whisper>=20231117",
+]
+
+[project.optional-dependencies]
+dev = [
+    "ruff>=0.14.11",
+]
+
+[project.scripts]
+meeting-agent = "meeting_agent.scripts.meeting_agent:main"
+meeting-cli = "meeting_agent.scripts.meeting_cli:main"
+
+[tool.ruff]
+target-version = "py312"
+line-length = 100
+exclude = [
+    ".git",
+    "__pycache__",
+    ".venv",
+    "venv",
+    "env",
+    "ENV",
+    ".env",
+    "build",
+    "dist",
+    ".eggs",
+    "*.egg-info",
+    "Soundrecording_raw",
+    ".cursor",
+]
+
+[tool.ruff.lint]
+select = [
+    "E",
+    "W",
+    "F",
+    "I",
+    "B",
+    "C4",
+    "UP",
+    "ARG",
+    "SIM",
+    "TCH",
+    "PIE",
+    "PT",
+    "RET",
+    "RUF",
+    "N",
+]
+ignore = [
+    "E501",
+    "B008",
+    "ARG001",
+    "ARG002",
+    "T201",
+    "PLR0913",
+    "PLR2004",
+    "PLR0912",
+    "PLR0915",
+]
+
+[tool.ruff.lint.per-file-ignores]
+"test_*.py" = ["ARG", "S101", "PLR2004"]
+"*_test.py" = ["ARG", "S101", "PLR2004"]
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+skip-magic-trailing-comma = false
+line-ending = "auto"
+
+[tool.ruff.lint.isort]
+force-single-line = false
+known-first-party = [
+    "meeting_agent",
+]
+split-on-trailing-comma = true

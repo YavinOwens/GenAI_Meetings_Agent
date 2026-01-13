@@ -1,0 +1,15 @@
+Analyze the following meeting transcript and generate professional meeting minutes suitable for business distribution.
+
+The output must:
+- Use formal, professional business language
+- Follow the exact format structure provided in your instructions
+- Extract all action items with clear owners and deadlines
+- Document all decisions with rationale
+- Identify all participants and their roles
+- Create a concise executive summary
+- Be suitable for email distribution to stakeholders
+
+MEETING TRANSCRIPT:
+{transcript}
+
+Generate comprehensive, professional meeting minutes following the required format exactly.

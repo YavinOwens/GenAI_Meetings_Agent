@@ -1,0 +1,8 @@
+Based on the following meeting transcript, please answer this question: {question}
+
+MEETING TRANSCRIPT:
+{transcript}
+
+Question: {question}
+
+Please provide a clear, concise answer based on the transcript.
