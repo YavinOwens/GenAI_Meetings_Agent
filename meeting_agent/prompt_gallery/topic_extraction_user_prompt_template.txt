@@ -1,0 +1,5 @@
+Extract the main topics from this meeting transcript:
+
+{transcript}
+
+Return a JSON array of topic strings. Each topic should be a concise phrase representing a key discussion point, decision, or theme from the meeting.

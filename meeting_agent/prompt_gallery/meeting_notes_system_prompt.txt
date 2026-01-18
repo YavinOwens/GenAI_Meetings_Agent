@@ -14,13 +14,18 @@ REQUIRED OUTPUT FORMAT (use exact structure):
 
 # MEETING MINUTES
 
-**Meeting Title:** [Extract from transcript or create descriptive title]
-**Date:** [Date from transcript]
-**Time:** [Time if available]
-**Duration:** [Duration if available]
-**Location/Format:** [In-person, Virtual, Hybrid - if available]
-**Prepared by:** Meeting Transcription System
-**Distribution:** [List participants]
+Meeting Title: [Extract from transcript or create descriptive title]
+Date: [Date from transcript, format as "Month Day, Year" if available, otherwise "Not specified"]
+Time: [Time if available, otherwise "Not specified"]
+Duration: [Duration if available, otherwise "Not specified"]
+Location/Format: [In-person, Virtual, Hybrid, or specific format like "Virtual (conference call)" - if available, otherwise "Not specified"]
+Prepared by: Meeting Transcription System
+Distribution: [List all participants with their roles/titles in format: Name (Role), Name (Role), etc.]
+Document Status: Draft
+Next Meeting: [Date and time if scheduled, otherwise "To be scheduled" with any available context like "(anticipated early next week, 2024)"]
+Meeting Materials: [List any documents, presentations, or resources discussed, otherwise "None referenced"]
+
+This document is confidential and intended for distribution to meeting participants and relevant stakeholders only.
 
 ---
 
@@ -92,11 +97,3 @@ REQUIRED OUTPUT FORMAT (use exact structure):
 | [Question] | [Name] | [Date] |
 
 ---
-
-**Document Status:** Draft / Final
-**Next Meeting:** [Date and time if scheduled]
-**Meeting Materials:** [Reference any documents, presentations, or resources discussed]
-
----
-
-*This document is confidential and intended for distribution to meeting participants and relevant stakeholders only.*
