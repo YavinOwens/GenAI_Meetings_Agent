@@ -24,6 +24,7 @@ A Python package for transcribing audio, processing meeting transcripts, and gen
 - **LLM-Powered Notes**: Generate professional meeting minutes using Ollama cloud models
 - **Multiple Formats**: Export notes in TXT, DOCX, RTF, or Markdown formats
 - **Interactive CLI**: Query transcripts interactively with natural language questions
+- **Sentiment Analysis**: Analyze overall document sentiment and per-attendee sentiment (Streamlit UI)
 - **APA Citations**: Automatic APA 7th edition citations for AI-generated content
 - **Professional Format**: Structured meeting minutes with action items, decisions, and executive summaries
 - **Token Tracking**: Monitor token usage and costs with tiktoken integration
@@ -61,6 +62,15 @@ sudo dnf install ffmpeg
 Download `ffmpeg` from [ffmpeg.org](https://ffmpeg.org/download.html) and add it to your PATH.
 
 ### Python Package Installation
+
+#### Install with Streamlit UI (includes sentiment analysis)
+
+For the full GUI experience with sentiment analysis:
+
+```bash
+pip install "meeting-agent[StreamlitUI]"
+python -m spacy download en_core_web_sm  # Required for named entity recognition
+```
 
 #### Option 1: Install directly from GitHub (Recommended)
 
@@ -200,6 +210,38 @@ Ask questions about your transcripts interactively:
 ```
 Question: What were the main action items discussed?
 Question: Who was responsible for the budget review?
+```
+
+### 4. Streamlit GUI (with Sentiment Analysis)
+
+Launch the interactive web-based GUI:
+
+```bash
+meeting-agent-streamlit
+```
+
+The Streamlit interface provides:
+
+- **Audio Transcription**: Upload and transcribe audio files
+- **Transcript Upload**: Upload existing transcripts
+- **Generate Notes**: Create structured meeting notes
+- **Q&A Chat**: Ask questions about transcripts
+- **Downloads**: Download notes in multiple formats
+- **Sentiment Analysis**: Analyze overall and per-attendee sentiment
+
+#### Sentiment Analysis Features
+
+The sentiment analysis tab provides:
+
+- **Overall Sentiment**: Compound score and breakdown (positive/neutral/negative percentages)
+- **Per-Attendee Sentiment**: When named entities are detected, analyze sentiment for each attendee
+- **Visual Indicators**: Emoji and color-coded sentiment labels
+- **Detailed Metrics**: Compound scores, mention counts, and sentiment breakdowns
+
+**Note**: Sentiment analysis requires additional dependencies:
+```bash
+pip install vaderSentiment spacy pandas
+python -m spacy download en_core_web_sm
 ```
 
 ## Usage Guide

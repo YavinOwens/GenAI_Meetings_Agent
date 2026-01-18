@@ -44,6 +44,10 @@ ENV/
 # API Keys
 api_key.txt
 
+# Database files
+meeting_agent.db
+*.db
+
 # Debug logs
 debug.log
 *.log

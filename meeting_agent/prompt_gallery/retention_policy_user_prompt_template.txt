@@ -1,0 +1,21 @@
+Analyze the following data and recommend retention policies:
+
+{analysis_context}
+
+TRANSCRIPT DATA:
+{transcript_summary}
+
+LABELS AND CATEGORIES:
+{labels_summary}
+
+METADATA:
+{metadata_summary}
+
+SENTIMENT ANALYSIS:
+{sentiment_summary}
+
+ADDITIONAL CONTEXT:
+{additional_context}
+
+Based on this analysis, provide retention policy recommendations following the specified format.
+Consider data sensitivity, business value, compliance requirements, and best practices for data lifecycle management.

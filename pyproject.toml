@@ -36,10 +36,17 @@ dependencies = [
 dev = [
     "ruff>=0.14.11",
 ]
+StreamlitUI = [
+    "streamlit>=1.28.0",  # For chat interface support
+    "vaderSentiment>=3.3.2",  # For sentiment analysis
+    "spacy>=3.7.0",  # For named entity recognition
+    "pandas>=2.0.0",  # For data tables in Streamlit
+]
 
 [project.scripts]
 meeting-agent = "meeting_agent.scripts.meeting_agent:main"
 meeting-cli = "meeting_agent.scripts.meeting_cli:main"
+meeting-agent-streamlit = "meeting_agent.scripts.streamlit_launcher:main"
 
 [tool.ruff]
 target-version = "py312"
